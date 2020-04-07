@@ -2,6 +2,7 @@ package api
 
 import (
 	"encoding/json"
+	log "github.com/sirupsen/logrus"
 	"net/http"
 )
 
@@ -41,6 +42,7 @@ var books = []Book{
 
 // Books handler to be used as http.HandleFunc for Book API:
 func BooksHandleFunc(w http.ResponseWriter, r *http.Request) {
+	log.Info("Marshalling the books list: ", books)
 	data, err := json.Marshal(books)
 
 	if err != nil {
