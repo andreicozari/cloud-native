@@ -56,11 +56,11 @@ func BooksHandleFunc(w http.ResponseWriter, r *http.Request) {
 
 func NewBook(title string, author string, isbn string) (*Book, error) {
 	if title == "" {
-		return nil, fmt.Errorf("The title can't be nil")
+		return nil, fmt.Errorf("The title can't be empty")
 	}
 
 	if isbn == "" {
-		return nil, fmt.Errorf("The isbn can't be nil")
+		return nil, fmt.Errorf("The isbn can't be empty")
 	}
 
 	return &Book{
