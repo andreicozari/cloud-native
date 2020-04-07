@@ -2,6 +2,7 @@ package api
 
 import (
 	"encoding/json"
+	"fmt"
 	log "github.com/sirupsen/logrus"
 	"net/http"
 )
@@ -51,4 +52,20 @@ func BooksHandleFunc(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Add("Content-Type", "application/json; charset=utf-8")
 	w.Write(data)
+}
+
+func NewBook(title string, author string, isbn string) (*Book, error) {
+	if title == "" {
+		return nil, fmt.Errorf("The title can't be nil")
+	}
+
+	if isbn == "" {
+		return nil, fmt.Errorf("The isbn can't be nil")
+	}
+
+	return &Book{
+		Title:  title,
+		Author: author,
+		ISBN:   isbn,
+	}, nil
 }

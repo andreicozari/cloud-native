@@ -44,3 +44,12 @@
  Minor version is not backward compatible   
  Minor version is for implementing features and is backward compatible 
  Patch for fixing bugs (security issues ) / issues and is backward compatible
+ 
+ # Add external dependencies:
+    Run go get to add a new dependency to your project:
+    
+    Git branch name : @master
+    go get github.com/go-chi/chi@master
+    
+  # Updating Package Versions
+    You may use go get -u or go get -u=patch to update dependencies to the latest minor or patch upgrades respectively.
