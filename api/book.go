@@ -22,7 +22,15 @@ func (b Book) ToJSON() []byte {
 }
 
 func FromJSON(data []byte) Book {
-	return Book{}
+	// define an empty book:
+	book := Book{}
+	err := json.Unmarshal(data, &book)
+
+	if err != nil {
+		panic(err)
+	}
+
+	return book
 }
 
 //
