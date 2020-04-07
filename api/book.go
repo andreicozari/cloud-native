@@ -63,9 +63,11 @@ func NewBook(title string, author string, isbn string) (*Book, error) {
 		return nil, fmt.Errorf("The isbn can't be empty")
 	}
 
-	return &Book{
+	book := &Book{
 		Title:  title,
 		Author: author,
 		ISBN:   isbn,
-	}, nil
+	}
+
+	return book, nil
 }
