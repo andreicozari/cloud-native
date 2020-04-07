@@ -20,6 +20,10 @@
 # testing:
      go get github.com/stretchr/testify/assert
 
+# run the test from terminal in the root dir:      
+     go test ./api -v
+
+
 # Concurrency patterns:
    
    https://www.youtube.com/watch?v=f6kdp27TYZs
