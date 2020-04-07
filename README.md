@@ -25,8 +25,22 @@
 
 
 # Concurrency patterns:
-   
    https://www.youtube.com/watch?v=f6kdp27TYZs
    
+# MongoDB:
+    $ go get gopkg.in/mgo.v2
+    $ go get github.com/gorilla/mux
+
+    https://gopkg.in/mgo.v2
+    http://niemeyer.net/mgo
    
-   
+# Module versions management / Dependency management:
+ # Version naming conventions:
+ Everything starts with v1.0.0
+    - Major version 1
+    - Minor version 0 
+    - Patch version 0
+ 
+ Minor version is not backward compatible   
+ Minor version is for implementing features and is backward compatible 
+ Patch for fixing bugs (security issues ) / issues and is backward compatible
