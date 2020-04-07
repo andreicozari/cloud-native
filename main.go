@@ -1,6 +1,7 @@
 package main
 
 import (
+	"cloud-native/api"
 	"fmt"
 	log "github.com/sirupsen/logrus"
 	"net/http"
@@ -15,6 +16,7 @@ func main() {
 
 	http.HandleFunc("/", index)
 	http.HandleFunc("/api/echo", echo)
+	http.HandleFunc("/api/books", api.BooksHandleFunc)
 
 	http.ListenAndServe(port(), nil)
 }

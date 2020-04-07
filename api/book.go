@@ -33,7 +33,20 @@ func FromJSON(data []byte) Book {
 	return book
 }
 
-//
-func BooksHandleFunc(w http.ResponseWriter, r *http.Request) {
+// Define a slice of books:
+var books = []Book{
+	Book{Title: "Cloud native GO", Author: "Rob Pike", ISBN: "0123456789"},
+	Book{Title: "Book2", Author: "Rob Pike", ISBN: "1123456789"},
+}
 
+// Books handler to be used as http.HandleFunc for Book API:
+func BooksHandleFunc(w http.ResponseWriter, r *http.Request) {
+	data, err := json.Marshal(books)
+
+	if err != nil {
+		panic(err)
+	}
+
+	w.Header().Add("Content-Type", "application/json; charset=utf-8")
+	w.Write(data)
 }
