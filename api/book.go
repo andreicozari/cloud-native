@@ -7,9 +7,9 @@ import (
 
 // Book type
 type Book struct {
-	Title  string
-	Author string
-	ISBN   string
+	Title  string `json:"title"`
+	Author string `json:"author"`
+	ISBN   string `json:"isbn"`
 }
 
 // Marshall the book to json:
